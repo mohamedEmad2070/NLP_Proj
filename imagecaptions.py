@@ -33,15 +33,17 @@ def upload_image():
 root = Tk()
 root.title("Image Caption Generator")
 root.geometry("400x500")
+root.configure(bg="#2c3e50")  # Set background color
 
-Label(root, text="Upload an Image to Generate a Caption", font=("Arial", 14)).pack(pady=10)
+Label(root, text="Upload an Image to Generate a Caption", font=("Arial", 14), bg="#2c3e50", fg="#ecf0f1").pack(pady=10)  # Set text and background colors
 
-image_label = Label(root)
+image_label = Label(root, bg="#34495e")  # Set background color for image area
 image_label.pack(pady=10)
 
-Button(root, text="Upload Image", command=upload_image).pack(pady=10)
+Button(root, text="Upload Image", command=upload_image, bg="#1abc9c", fg="#ecf0f1", font=("Arial", 12), relief="flat", padx=10, pady=5).pack(pady=10)  # Modern button style
 
-caption_label = Label(root, text="", wraplength=350, font=("Arial", 12))
+# Update the font of the caption_label to support Arabic characters
+caption_label = Label(root, text="", wraplength=350, font=("Arial", 12), bg="#2c3e50", fg="#ecf0f1")  # Use a font that supports Arabic
 caption_label.pack(pady=20)
 
 root.mainloop()
